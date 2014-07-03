@@ -15,11 +15,11 @@ int main(int argc, char** argv){
   ros::Publisher des_pose =
        node.advertise<nav_msgs::Odometry>("uav_pose", 100);
 
-  tf::TransformListener listener;
+    tf::TransformListener listener;
 
   ros::Rate rate(100.0);
   while (node.ok()){
-    tf::StampedTransform transform;
+ /*   tf::StampedTransform transform;
     try{
       listener.lookupTransform("/world","/vicon/CrazyFlie_1/Body",
                                ros::Time(0), transform);
@@ -28,6 +28,7 @@ int main(int argc, char** argv){
       ROS_ERROR("%s",ex.what());
     }
 
+*/
 
     rate.sleep();
   }
